@@ -36,7 +36,8 @@ begin
       from "user".usr_tbl_user
      where trim(lower(use_email)) = trim(lower(p_user_email));
     
-    if v_use_id is null then
+    if v_use_id is null 
+    then
         v_error_code = 'M0008';                                    
         raise exception 'Error: Email no existe';
     end if;
